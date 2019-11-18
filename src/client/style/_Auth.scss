@@ -1,0 +1,85 @@
+.Auth {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .Phones {
+    height: 618px;
+    min-width: 454px;
+    background-image: url("../public/img/phones.png");
+    background-size: 454px 618px;
+
+    .Slides {
+      margin: 99px 0 0 151px;
+    }
+  }
+
+  .SecondSlide {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+
+    .RegisterForm {
+      display: flex;
+      flex-direction: column;
+
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #fff;
+      padding: 10px 48px;
+      border: 1px solid #e3e3e3;
+
+      h1 {
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+        font-weight: 600;
+        font-size: 52px;
+        margin-bottom: 0;
+      }
+
+      p {
+        text-align: center;
+        font-size: 17px;
+        font-weight: 600;
+      }
+
+      form {
+        input {
+          width: 100%;
+          color: #3d3d3d;
+          height: 36px;
+          padding-left: 8px;
+          background-color: #fafafa;
+          font-size: 12px;
+          margin-bottom: 6px;
+          border: 1px solid #efefef;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        button {
+          margin-top: 8px;
+          width: 100%;
+          background-color: #3897f0;
+          color: white;
+          border-radius: 4px;
+          border: 1px solid transparent;
+          padding: 5px 9px;
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+    .IfHasLogin{
+      background-color: #fff;
+      border: 1px solid #e3e3e3;
+      margin-top: 10px;
+      padding: 10px 0;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

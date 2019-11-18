@@ -1,0 +1,66 @@
+.Stories{
+  position: relative;
+  max-width: 293px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .Avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  h2{
+    margin-bottom: 0;
+  }
+  p{
+    margin-top: 0;
+    font-size: 0.7rem;
+  }
+  .StoriesList{
+    border: 1px solid #e3e3e3;
+    width: 100%;
+    background-color: white;
+    margin-top: 4px;
+    .StoriesHeader{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 25px;
+      padding: 6px 8px;
+      h3{
+        margin: 0;
+      }
+      p{
+        margin-bottom: 0;
+        font-size: 0.8rem;
+      }
+    }
+    .ScrollList{
+      display: flex;
+      flex-direction: column;
+      height: 182px;
+      overflow-y: auto;
+      .Story {
+        display: flex;
+        align-items: center;
+        margin-left: 8px;
+        margin-top: 14px;
+
+        img {
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+        }
+        .nickmar {
+          margin: 0 0 0 10px;
+          h2 {
+            margin: 0;
+          }
+          p{
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

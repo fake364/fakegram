@@ -1,0 +1,57 @@
+.User {
+  width: 100%;
+  .UserHead {
+    display: flex;
+    margin-bottom: 44px;
+    .UserAva {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+      img{
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    .Info {
+
+      flex: 2;
+      .UserSubscribe {
+        display: flex;
+        align-items: baseline;
+        h2 {
+          margin-top: 0;
+          font-size: 28px;
+          font-weight: 300;
+          margin-right: 28px;
+        }
+      }
+      .Counts{
+        margin-bottom: 20px;
+        display: flex;
+        div{
+          font-size: 16px;
+          margin-right: 40px;
+        }
+      }
+    }
+
+  }
+  .PostContainer{
+    width: 100%;
+    border-top: 1px solid #efefef;
+    padding-top: 32px;
+    display: grid;
+    grid-gap: 28px;
+    grid-auto-columns: 282px;
+    grid-auto-rows: 282px;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    div{
+      img{
+        width: 100%;
+      }
+    }
+  }
+}

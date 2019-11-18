@@ -1,0 +1,18 @@
+.PostCreator {
+  padding: 40px;
+width: 600px;
+  display: flex;
+  flex-direction: column;
+[class^="DropzoneArea-dropZone"] {
+  background-color: transparent;
+}
+  h1{
+    margin-top: 0;
+    font-size: 24px;
+    color: grey;
+    text-align: center;
+  }
+  span{
+    font-weight: 400;
+  }
+}
