@@ -18,6 +18,7 @@ Still develop, but you can watch screens or inspect the code
  - [ ] Post like
  - [ ] Subscribe system and post filter
  - [ ] Stories
+ - [ ] Run app in docker-compose
 
 ![enter image description here](https://i.imgur.com/SNkZEfs.png)![enter image description here](https://i.imgur.com/5kNi3UG.png)
 
