@@ -10,7 +10,7 @@ Still develop, but you can watch screens or inspect the code
 - MongoDB
 - Some material UI components
 ### Functional/Plan
- - [x] Insta-like Layout
+ - [x] Insta-like Layout (will update)
  - [x] Authentication (Register,Login,Logout, Access Controll)
  - [x] Post add +/- (You can watch static posts on your /:user page )
  - [ ] Post comments
