@@ -13,10 +13,11 @@ Still develop, but you can watch screens or inspect the code
  - [x] Insta-like Layout (will update)
  - [x] Authentication (Register,Login,Logout, Access Controll)
  - [x] Post add +/- (You can watch static posts on your /:user page )
- - [ ] Post comments
- - [ ] Detailed post
+ - [x] Post comments
+ - [x] Detailed post
  - [ ] Post like
  - [ ] Subscribe system and post filter
+ - [ ] Avatar change
  - [ ] Stories
  - [ ] Run app in docker-compose
 
