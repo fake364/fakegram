@@ -16,7 +16,7 @@ Still develop, but you can watch screens or inspect the code
  - [x] Post comments
  - [x] Detailed post
  - [ ] Post like
- - [ ] Subscribe system and post filter
+ - [x] Subscribe system and post filter
  - [ ] Avatar change
  - [ ] Stories
  - [ ] Run app in docker-compose
