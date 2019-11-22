@@ -70,7 +70,7 @@ export default connect(null,(dispatch => ({
                 if (res.status == 200) {
                     console.log(res);
                     dispatch({type:"LOGIN_SUCCEED"})
-                    dispatch({type:"USER_INFO_GOTTEN",username:res.data.username});
+                    dispatch({type:"USER_INFO_GOTTEN",payload:{username:res.data.username,userid:res.data.userid}});
                 }
             }, (err) => {
                 dispatch({type: "LOGIN_FAILED"});

@@ -3,7 +3,9 @@
   background-color: white;
   position: relative;
   min-height: 77px;
-
+  z-index: 2;
+  top: 0;
+  left: 0;
   a{
     color: black;
     text-decoration: none;
@@ -17,7 +19,8 @@
       background-color: white;
       display: flex;
       justify-content: center;
-      z-index: 2;
+
+
       .SubHead {
 
         min-height: 77px;

@@ -62,7 +62,8 @@ export default connect(state=>({
                 .then(res => {
                     if (res.status === 200) {
                         dispatch({type:"LOGIN_SUCCEED"});
-                        dispatch({type:"USER_INFO_GOTTEN",username:res.data.username,userid:res.data.userid});
+                        dispatch({type:"USER_INFO_GOTTEN",payload:{username:res.data.username,userid:res.data.userid}});
+                        console.log(res.data);
                     } else {
                         const error = new Error(res.error);
                         throw error;

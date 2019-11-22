@@ -1,0 +1,115 @@
+.DetailedPostBack{
+
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  .BlackScreen{
+    background-color: rgba(0,0,0,.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+
+  }
+    .DetailedPost{
+      position: relative;
+      z-index: 4;
+      max-width: 935px;
+      width: 100%;
+      min-height: 450px;
+      background-color: black;
+      display: flex;
+      justify-content: stretch;
+      img{
+        flex: 1;
+      }
+      .DetailSecond{
+        max-width: 335px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+
+          .PostHeader{
+            display: flex;
+            padding: 16px;
+            height: 72px;
+            align-items: center;
+            box-sizing: border-box;
+            border-bottom: 1px solid #efefef;
+            img{
+              width: 32px;
+              height: 32px;
+              border-radius: 50%;
+            }
+          }
+        .CommentsSocial{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+
+          .Comments{
+            word-break: break-word;
+            box-sizing: border-box;
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            padding: 12px 16px;
+            overflow-y: auto;
+            height: 400px;
+            img{
+              width: 32px;
+              height: 32px;
+              border-radius: 50%;
+            }
+            .Comment{
+              box-sizing: border-box;
+              max-width: 335px;
+              width: 100%;
+              display: flex;
+              margin-bottom: 16px;
+              word-wrap: break-word;
+              .CommentText{
+                flex:1;
+                  margin-left: 18px;
+                font-size: 0.9rem;
+
+                h2{
+                  display: inline-block;
+                  margin:0;
+                }
+              }
+            }
+          }
+          .Social{
+            border-top: 1px solid #efefef;
+            border-bottom: 1px solid #efefef;
+            margin-top: 4px;
+            padding: 12px 16px;
+            img{
+              width: 28px;
+              height: 28px;
+              margin-right: 16px;
+            }
+
+          }
+          .SendComment{
+            padding: 8px;
+            form{
+              display: flex;
+              input{
+                flex: 1;
+                border: none;
+                background-color: white;
+                padding: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+}

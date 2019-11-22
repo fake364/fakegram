@@ -55,6 +55,7 @@ class PostCreator extends Component {
                                 filesLimit={1}
                                 dropzoneText={"Выберите или перетащите фотографию"}
                                 name="files"
+                                maxFileSize={5000000}
                             />
                             <TextField
                                 id="description"
