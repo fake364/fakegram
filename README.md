@@ -21,9 +21,11 @@ Still develop, but you can watch screens or inspect the code
  - [ ] Stories
  - [ ] Run app in docker-compose
 
-![enter image description here](https://i.imgur.com/SNkZEfs.png)![enter image description here](https://i.imgur.com/5kNi3UG.png)
-
+![enter image description here](https://i.imgur.com/SNkZEfs.png)
+![enter image description here](https://i.imgur.com/5kNi3UG.png)
 ![enter image description here](https://i.imgur.com/ifMJy0b.png)
 ![enter image description here](https://i.imgur.com/dzd0AhN.png)
-![enter image description here](https://i.imgur.com/wPp7Y5q.png)
+![enter image description here](https://i.imgur.com/6nRqUYo.png)
 ![enter image description here](https://i.imgur.com/iLgmafr.png)
+![enter image description here](https://i.imgur.com/5soDxOl.png)
+
