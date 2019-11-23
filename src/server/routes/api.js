@@ -38,34 +38,34 @@ router.patch("/post/:postid", withAuth, function (req, res, next) {
 });
 
 router.patch("/user/subscribe", withAuth, function (req, res, next) {
-    const {from, to,type} = req.body;
+    const {from, to, type} = req.body;
     User.find({$or: [{username: from}, {username: to}]}).populate("subscribers").then((docs, err) => {
         if (err) {
             res.sendStatus(500);
         }
         if (docs !== null) {
-                if (docs[0].username === from) {
-                    if(type==="subscribe") {
-                        docs[0].subscribed.push(docs[1]);
-                        docs[1].subscribers.push(docs[0]);
-                    }else {
-                        docs[0].subscribed.splice(docs[1],1);
-                        docs[1].subscribers.splice(docs[0],1);
-                    }
+            if (docs[0].username === from) {
+                if (type === "subscribe") {
+                    docs[0].subscribed.push(docs[1]);
+                    docs[1].subscribers.push(docs[0]);
                 } else {
-                    if(type==="subscribe") {
-                        docs[1].subscribed.push(docs[0]);
-                        docs[0].subscribers.push(docs[1]);
-                    }else {
-                        docs[1].subscribed.splice(docs[0],1);
-                        docs[0].subscribers.splice(docs[1],1);
-                    }
+                    docs[0].subscribed.splice(docs[1], 1);
+                    docs[1].subscribers.splice(docs[0], 1);
                 }
+            } else {
+                if (type === "subscribe") {
+                    docs[1].subscribed.push(docs[0]);
+                    docs[0].subscribers.push(docs[1]);
+                } else {
+                    docs[1].subscribed.splice(docs[0], 1);
+                    docs[0].subscribers.splice(docs[1], 1);
+                }
+            }
 
-            docs[0].save().then(doc=>{
-                docs[1].save().then(doc2=>{
-                    let toSend=doc.username===to?doc:doc2;
-                    toSend={subscribers:toSend.subscribers}
+            docs[0].save().then(doc => {
+                docs[1].save().then(doc2 => {
+                    let toSend = doc.username === to ? doc : doc2;
+                    toSend = {subscribers: toSend.subscribers}
                     res.status(200).json(toSend);
                 });
             });
@@ -105,7 +105,7 @@ router.get('/checkToken', withAuth, function (req, res) {
 router.post('/authenticate', function (req, res) {
     const {userlogin: username, passlogin: password} = req.body;
 
-    User.findOne({username}).then((user,err)=>{
+    User.findOne({username}).then((user, err) => {
         console.log(user);
         if (err) {
             console.error(err);
@@ -147,9 +147,41 @@ router.post('/authenticate', function (req, res) {
 router.get("/logout", withAuth, function (req, res) {
     res.cookie("token", "").sendStatus(200);
 });
+router.get('/feed', withAuth, function (req, res) {
+
+    User.findOne({username: req.query.username}).populate({path:"posts",
+    populate:{
+        path:"author",
+        select: "username"
+    }
+    }).populate({
+        path: "subscribed",
+        populate:{
+            path:"posts",
+            populate:{
+                path:"author",
+                select:"username"
+            }
+
+        }
+    })
+        .then((doc, err) => {
+            if (err) {
+                console.log(err);
+            }
+
+            if (doc !== null) {
+                const {subscribed} = doc;
+                let allPosts=[...subscribed,{posts:doc.posts}]
+                res.status(200).json({subscribed:allPosts});
+            } else {
+                res.status(404).send("Что-то пошло не так");
+            }
+        });
+});
 router.get('/:user', function (req, res) {
 
-    User.findOne({username: req.params.user}).populate("posts").populate("subscribed","username").populate("subscribers","username").then((doc, err) => {
+    User.findOne({username: req.params.user}).populate("posts").populate("subscribed", "username").populate("subscribers", "username").then((doc, err) => {
         if (err) {
             console.log(err);
         }
@@ -172,7 +204,6 @@ router.post('/post', withAuth, upload.single("image"), function (req, res, next)
         }
         if (doc) {
             sharp(req.file.buffer).resize({
-                height: 600,
                 width: 600
             }).toFile(path.resolve(__dirname, "../../../dist/build/images/posts/" + doc._id + ".png")).then(function (fileinfo) {
                 Post.findOneAndUpdate({_id: doc._id}, {image: doc._id + ".png"}, {new: true}).then((document, err) => {

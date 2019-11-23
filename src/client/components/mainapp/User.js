@@ -6,6 +6,8 @@ import axios from "axios";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Button from "@material-ui/core/Button";
 import DetailedPost from "./DetailedPost";
+import {asyncGetUser, asyncSubscribe} from "../../actions/profileActions";
+
 
 class User extends Component {
 
@@ -97,42 +99,10 @@ export default connect(state => ({
     currentUserId:state.userReducer.userid,
     isLogined: state.authReducer.isLogined,
 }), dispatch => ({
-    getUser: (username,logined) => {
-        const asyncGetUser = () => (dispatch, getState) => {
-            dispatch({type: "GET_PROFILE_START"});
-            axios.get("/api/" + username).then(res => {
-                if (res.status === 200) {
-
-                    dispatch({
-                        type: "GET_PROFILE_INFO", payload: {
-                            ...res.data,
-                            profileStatus: {
-                                isLoading: false,
-                                isFound: true,
-                            }
-                        }
-                    });
-
-                }
-            }).catch(err => {
-                dispatch({type: "GET_PROFILE_FAILED"});
-            });
-        }
-        dispatch(asyncGetUser())
+    getUser: (username) => {
+        dispatch(asyncGetUser(username));
     },
     subscribeTo: (from, to,type) => {
-        const asyncSubscribe = () => dispatch => {
-            axios.patch("/api/user/subscribe", {from, to,type}).then((res, err) => {
-
-                if (res.status === 200) {
-                    dispatch({
-                        type: "GET_PROFILE_INFO",
-                        payload: {...res.data,isSubscribed:type==="subscribe"?true:false},
-
-                    });
-                }
-            });
-        }
-        dispatch(asyncSubscribe());
+        dispatch(asyncSubscribe(from,to,type));
     }
 }))(User);
