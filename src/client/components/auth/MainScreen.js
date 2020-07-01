@@ -1,5 +1,4 @@
 import React from 'react';
-import Slide1 from "../../public/img/first.jpg";
 import RegForm from "./RegForm";
 import {Link} from "react-router-dom";
 
@@ -9,7 +8,7 @@ function MainScreen() {
 
             <div className="Phones">
                 <div className="Slides">
-                    <img src={Slide1}/>
+                    <img src="/dist/build/images/first.jpg"/>
                 </div>
             </div>
             <div className="SecondSlide">

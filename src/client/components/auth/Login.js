@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import {Link, Redirect} from "react-router-dom";
-import axios from "axios";
+import {Link} from "react-router-dom";
 import {connect} from "react-redux";
-import * as jwt from "jsonwebtoken";
+import authAction from "../../actions/authActions";
 
 
 class LoginComponent extends Component {
@@ -21,18 +20,19 @@ class LoginComponent extends Component {
         this.setState({
             [name]: value
         });
-    }
+    };
     onLogin = (event) => {
         event.preventDefault();
         const {userlogin, passlogin} = this.state;
-        this.props.onLogIn(userlogin,passlogin);
-    }
+        this.props.onLogIn(userlogin, passlogin);
+        console.log(this.props.ERR_MSG);
+    };
+
 
     render() {
-
         return (
-            <div className="Auth" style={{height:"100%"}}>
-                <main style={{height:"100%"}}>
+            <div className="Auth" style={{height: "100%"}}>
+                <main style={{height: "100%"}}>
                     <div className="MainFlex">
                         <div className="SecondSlide">
                             <div style={{
@@ -43,11 +43,14 @@ class LoginComponent extends Component {
                                     paddingTop: "24px"
                                 }}>Fakegram</h1>
                                 <form onSubmit={this.onLogin} method="post">
-                                    {this.state.err !== "" ? <center
-                                        style={{color: "red", marginBottom: "14px"}}>{this.state.err}</center> : null}
-                                    <input onChange={this.handleInputChange} name="userlogin"
+                                    <center
+                                        style={{
+                                            color: "red",
+                                            marginBottom: "14px"
+                                        }}>{this.props.isFailed ? this.props.ERR_MSG : null}</center>
+                                    <input required onChange={this.handleInputChange} name="userlogin"
                                            placeholder="Номер телефона, имя пользователя или эл. адрес"/>
-                                    <input onChange={this.handleInputChange} type="password" name="passlogin"
+                                    <input required onChange={this.handleInputChange} type="password" name="passlogin"
                                            placeholder="Пароль"/>
                                     <button>Войти</button>
                                 </form>
@@ -63,19 +66,11 @@ class LoginComponent extends Component {
     }
 }
 
-export default connect(null,(dispatch => ({
-    onLogIn: (userlogin,passlogin) => {
-        const asyncAuth=(us,pass)=> dispatch=>{
-            axios.post("/api/authenticate", {userlogin:us, passlogin:pass}).then((res) => {
-                if (res.status == 200) {
-                    console.log(res);
-                    dispatch({type:"LOGIN_SUCCEED"})
-                    dispatch({type:"USER_INFO_GOTTEN",payload:{username:res.data.username,userid:res.data.userid}});
-                }
-            }, (err) => {
-                dispatch({type: "LOGIN_FAILED"});
-            });
-        }
-        dispatch(asyncAuth(userlogin,passlogin));
+export default connect(state => ({
+    ERR_MSG: state.authReducer.ERR_MSG,
+    isFailed: state.authReducer.isFailed
+}), (dispatch => ({
+    onLogIn: (user, pass) => {
+        dispatch(authAction(user, pass));
     }
 })))(LoginComponent);

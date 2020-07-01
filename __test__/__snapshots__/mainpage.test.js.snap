@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check successfull attempt of register i'm on the main page 1`] = `
+<div
+  className="App"
+>
+  <main>
+    <div
+      className="MainFlex"
+    >
+      <div
+        className="Auth"
+      >
+        <div
+          className="Phones"
+        >
+          <div
+            className="Slides"
+          >
+            <img
+              src="/dist/build/images/first.jpg"
+            />
+          </div>
+        </div>
+        <div
+          className="SecondSlide"
+        >
+          <div
+            className="RegisterForm"
+          >
+            <h1>
+              <i>
+                Fakegram
+              </i>
+            </h1>
+            <p>
+              Зарегистрируйтесь, чтобы смотреть фото и видео ваших друзей.
+            </p>
+            <form
+              onSubmit={[Function]}
+            >
+              <input
+                name="phone"
+                onChange={[Function]}
+                placeholder="Моб телефон"
+                required={true}
+                type="text"
+              />
+              <input
+                name="name"
+                onChange={[Function]}
+                placeholder="Имя и фамилия"
+                required={true}
+                type="text"
+              />
+              <input
+                name="login"
+                onChange={[Function]}
+                placeholder="Имя пользователя"
+                required={true}
+                type="text"
+              />
+              <input
+                name="password"
+                onChange={[Function]}
+                placeholder="Пароль"
+                required={true}
+                type="password"
+              />
+              <button>
+                Регистрация
+              </button>
+            </form>
+            <p
+              style={
+                Object {
+                  "fontSize": "14px",
+                  "padding": "8px 24px",
+                }
+              }
+            >
+              Регистрируясь, вы принимаете наши Условия, Политику использования данных и Политику в отношении файлов cookie
+            </p>
+          </div>
+          <div
+            className="IfHasLogin"
+          >
+            Есть аккаунт? 
+            <a
+              href="/login"
+              onClick={[Function]}
+            >
+              Вход
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+`;

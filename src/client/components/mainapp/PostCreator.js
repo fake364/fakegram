@@ -7,6 +7,7 @@ import axios from "axios";
 import FormData from "form-data";
 import {CircularProgress} from "@material-ui/core";
 import {Redirect} from "react-router";
+import serverUrl from "../../../../serverUrl";
 
 class PostCreator extends Component {
     constructor(props) {
@@ -34,12 +35,12 @@ class PostCreator extends Component {
     };
 
     render() {
-        if(this.props.postStatus.isLoading){
+        if (this.props.postStatus.isLoading) {
             return <main>
                 <div className="MainFlex"><CircularProgress/></div>
             </main>
         }
-        if(this.props.postStatus.isDone){
+        if (this.props.postStatus.isDone) {
             this.props.resetPage();
             return <Redirect to="/"/>
         }
@@ -79,8 +80,8 @@ class PostCreator extends Component {
 export default connect(state => ({
     logedUser: state.userReducer.username,
     logedUserId: state.userReducer.userid,
-    description:state.postCreateReducer.description,
-    file:state.postCreateReducer.file,
+    description: state.postCreateReducer.description,
+    file: state.postCreateReducer.file,
     postStatus: state.postCreateReducer.postStatus
 }), dispatch => ({
     setFile: (file) => {
@@ -92,7 +93,7 @@ export default connect(state => ({
     createPost: (formdata) => {
         const asyncPostCreate = () => dispatch => {
             dispatch({type: "POST_CREATE_INIT"});
-            axios.post("/api/post", formdata,
+            axios.post(serverUrl + "/api/post", formdata,
                 {
                     headers: {
                         'Content-Type': 'multipart/form-data'
@@ -108,7 +109,7 @@ export default connect(state => ({
         }
         dispatch(asyncPostCreate());
     },
-    resetPage:()=>{
-        dispatch({type:"POST_CREATE_RESET"});
+    resetPage: () => {
+        dispatch({type: "POST_CREATE_RESET"});
     }
 }))(PostCreator);

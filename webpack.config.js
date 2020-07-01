@@ -4,7 +4,7 @@ const publicPath = '/dist/build/';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: ["babel-polyfill","./index.js"],
+    entry: ["babel-polyfill", "./index.js"],
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/client/index.html'
@@ -63,9 +63,9 @@ module.exports = {
                         name: '[name].[ext]',
                         publicPath: "images",
                         outputPath: "images",
-                        limit:"100000"
+                        limit: "100000"
                     }
-                }, ],
+                },],
 
 
             },

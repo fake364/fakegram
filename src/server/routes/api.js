@@ -9,32 +9,37 @@ const multer = require('multer');
 const upload = multer();
 const sharp = require("sharp");
 const Post = require("../models/Post");
+var fs = require('fs');
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.send('Fakegram api');
 });
 router.patch("/post/:postid", withAuth, function (req, res, next) {
     console.log(req.body);
-    Post.findOne({_id: req.params.postid}).then((doc, err) => {
-        if (err) {
-            console.log(err);
-        }
-        if (doc !== null) {
-            const {author, comment} = req.body;
-            doc.comments.push({author, comment});
-            doc.save().then((doc2, err) => {
-                if (doc2) {
-                    res.sendStatus(200);
-                }
-                if (err) {
-                    res.sendStatus(500);
-                }
-            })
+    if (!req.body.comment || req.body.comment.trim() === "") {
+        res.status(400).send("Комментарий не может быть пустой");
+    } else {
+        Post.findOne({_id: req.params.postid}).then((doc, err) => {
+            if (err) {
+                console.log(err);
+            }
+            if (doc !== null) {
+                const {author, comment} = req.body;
+                doc.comments.push({author, comment});
+                doc.save().then((doc2, err) => {
+                    if (doc2) {
+                        res.sendStatus(200);
+                    }
+                    if (err) {
+                        res.sendStatus(500);
+                    }
+                })
 
-        } else {
-            res.status(404).send("Такого поста нет");
-        }
-    });
+            } else {
+                res.status(404).send("Такого поста нет");
+            }
+        });
+    }
 });
 
 router.patch("/user/subscribe", withAuth, function (req, res, next) {
@@ -72,10 +77,18 @@ router.patch("/user/subscribe", withAuth, function (req, res, next) {
         }
     });
 });
+router.delete('/user/:username', function (req, res) {
+    const user = req.params.username;
+    User.deleteOne({username: user}).then(() => {
+        res.sendStatus(200)
+    }).catch(err => {
+        res.sendStatus(500);
+    });
+});
 router.post('/user', function (req, res, next) {
+    console.log(req.headers);
     console.log(req.body);
     const {body: {phone, name, login, password}} = req;
-    //console.log(User);
     User.findOne({$or: [{phone: phone}, {username: login}]}).then((doc, err) => {
         if (err) {
             console.log(err);
@@ -99,8 +112,7 @@ router.post('/user', function (req, res, next) {
 router.get('/checkToken', withAuth, function (req, res) {
     const token = req.cookies.token;
     const decoded = jwt.decode(token);
-
-    res.status(200).json({username: decoded.username, userid: decoded.userid});
+    res.status(200).json({username: decoded.username, userid: decoded.userid, name: decoded.name});
 });
 router.post('/authenticate', function (req, res) {
     const {userlogin: username, passlogin: password} = req.body;
@@ -116,7 +128,7 @@ router.post('/authenticate', function (req, res) {
         } else if (!user) {
             res.status(401)
                 .json({
-                    err: 'Incorrect username or password'
+                    err: 'Неправильное имя пользователя или пароль'
                 });
         } else {
             user.isCorrectPassword(password, function (err, same) {
@@ -128,17 +140,16 @@ router.post('/authenticate', function (req, res) {
                 } else if (!same) {
                     res.status(401)
                         .json({
-                            err: 'Incorrect username or password'
+                            err: 'Неправильное имя пользователя или пароль'
                         });
                 } else {
                     // Issue token
-
-                    const payload = {userid: user._id, username};
+                    const payload = {userid: user._id, username, name: user.name};
                     const token = jwt.sign(payload, secret, {
                         expiresIn: '1h'
                     });
                     res.cookie('token', token, {httpOnly: true})
-                        .status(200).json({username: username, userid: user._id});
+                        .status(200).json({username: username, userid: user._id, name: user.name});
                 }
             });
         }
@@ -149,18 +160,19 @@ router.get("/logout", withAuth, function (req, res) {
 });
 router.get('/feed', withAuth, function (req, res) {
 
-    User.findOne({username: req.query.username}).populate({path:"posts",
-    populate:{
-        path:"author",
-        select: "username"
-    }
+    User.findOne({username: req.query.username}).populate({
+        path: "posts",
+        populate: {
+            path: "author",
+            select: "username"
+        }
     }).populate({
         path: "subscribed",
-        populate:{
-            path:"posts",
-            populate:{
-                path:"author",
-                select:"username"
+        populate: {
+            path: "posts",
+            populate: {
+                path: "author",
+                select: "username"
             }
 
         }
@@ -172,8 +184,8 @@ router.get('/feed', withAuth, function (req, res) {
 
             if (doc !== null) {
                 const {subscribed} = doc;
-                let allPosts=[...subscribed,{posts:doc.posts}]
-                res.status(200).json({subscribed:allPosts});
+                let allPosts = [...subscribed, {posts: doc.posts}]
+                res.status(200).json({subscribed: allPosts});
             } else {
                 res.status(404).send("Что-то пошло не так");
             }
@@ -203,9 +215,13 @@ router.post('/post', withAuth, upload.single("image"), function (req, res, next)
             res.status(500).send("Error creating post");
         }
         if (doc) {
+            var targetDir = "../../../dist/build/images/posts/";
+            if (!fs.existsSync(path.resolve(__dirname, targetDir))) {
+                fs.mkdirSync(path.resolve(__dirname, targetDir));
+            }
             sharp(req.file.buffer).resize({
                 width: 600
-            }).toFile(path.resolve(__dirname, "../../../dist/build/images/posts/" + doc._id + ".png")).then(function (fileinfo) {
+            }).toFile(path.resolve(__dirname, targetDir + doc._id + ".png")).then(function (fileinfo) {
                 Post.findOneAndUpdate({_id: doc._id}, {image: doc._id + ".png"}, {new: true}).then((document, err) => {
                     if (err) {
                         res.sendStatus(500);
