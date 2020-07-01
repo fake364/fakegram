@@ -1,0 +1,1083 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should Posts render correctly 1`] = `
+<div
+  className="PostsFeed"
+>
+  <div
+    className="Post"
+  >
+    <header>
+      <a
+        href="/test"
+        onClick={[Function]}
+      >
+        <img
+          alt="Photo"
+          src="/dist/build/images/avatar.jpg"
+        />
+      </a>
+      <h2>
+        <a
+          href="/test"
+          onClick={[Function]}
+        >
+          test
+        </a>
+      </h2>
+      <img
+        className="dots"
+        src="/dist/build/images/dots.png"
+      />
+    </header>
+    <div
+      className="postphoto"
+    >
+      <img
+        src="https://cdn.pixabay.com/photo/2020/04/23/03/35/the-leaves-5080909_960_720.jpg"
+      />
+    </div>
+    <div
+      className="FootBlock"
+      style={
+        Object {
+          "maxHeight": "300px",
+        }
+      }
+    >
+      <div
+        className="LikeComments"
+      >
+        <div
+          className="PostPanel"
+        >
+          <img
+            alt="Photo"
+            className="Icon"
+            src="/dist/build/images/like.png"
+          />
+          <img
+            alt="Photo"
+            className="Icon"
+            src="/dist/build/images/comment.png"
+          />
+        </div>
+        <h2>
+          999 лайков
+        </h2>
+        <div
+          className="Comments"
+          style={
+            Object {
+              "maxHeight": "150px",
+              "overflowY": "auto",
+            }
+          }
+        >
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             1231
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             1231
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             y
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             y
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             y
+          </div>
+        </div>
+      </div>
+      <div
+        className="Comment"
+      >
+        <input
+          placeholder="Добавить комментарий...."
+          required={true}
+        />
+        <button>
+          Опубликовать
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="Post"
+  >
+    <header>
+      <a
+        href="/test"
+        onClick={[Function]}
+      >
+        <img
+          alt="Photo"
+          src="/dist/build/images/avatar.jpg"
+        />
+      </a>
+      <h2>
+        <a
+          href="/test"
+          onClick={[Function]}
+        >
+          test
+        </a>
+      </h2>
+      <img
+        className="dots"
+        src="/dist/build/images/dots.png"
+      />
+    </header>
+    <div
+      className="postphoto"
+    >
+      <img
+        src="https://cdn.pixabay.com/photo/2020/04/23/03/35/the-leaves-5080909_960_720.jpg"
+      />
+    </div>
+    <div
+      className="FootBlock"
+      style={
+        Object {
+          "maxHeight": "300px",
+        }
+      }
+    >
+      <div
+        className="LikeComments"
+      >
+        <div
+          className="PostPanel"
+        >
+          <img
+            alt="Photo"
+            className="Icon"
+            src="/dist/build/images/like.png"
+          />
+          <img
+            alt="Photo"
+            className="Icon"
+            src="/dist/build/images/comment.png"
+          />
+        </div>
+        <h2>
+          999 лайков
+        </h2>
+        <div
+          className="Comments"
+          style={
+            Object {
+              "maxHeight": "150px",
+              "overflowY": "auto",
+            }
+          }
+        >
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             1231
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             1231
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             y
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             y
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             y
+          </div>
+        </div>
+      </div>
+      <div
+        className="Comment"
+      >
+        <input
+          placeholder="Добавить комментарий...."
+          required={true}
+        />
+        <button>
+          Опубликовать
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="Post"
+  >
+    <header>
+      <a
+        href="/test"
+        onClick={[Function]}
+      >
+        <img
+          alt="Photo"
+          src="/dist/build/images/avatar.jpg"
+        />
+      </a>
+      <h2>
+        <a
+          href="/test"
+          onClick={[Function]}
+        >
+          test
+        </a>
+      </h2>
+      <img
+        className="dots"
+        src="/dist/build/images/dots.png"
+      />
+    </header>
+    <div
+      className="postphoto"
+    >
+      <img
+        src="https://cdn.pixabay.com/photo/2020/04/23/03/35/the-leaves-5080909_960_720.jpg"
+      />
+    </div>
+    <div
+      className="FootBlock"
+      style={
+        Object {
+          "maxHeight": "300px",
+        }
+      }
+    >
+      <div
+        className="LikeComments"
+      >
+        <div
+          className="PostPanel"
+        >
+          <img
+            alt="Photo"
+            className="Icon"
+            src="/dist/build/images/like.png"
+          />
+          <img
+            alt="Photo"
+            className="Icon"
+            src="/dist/build/images/comment.png"
+          />
+        </div>
+        <h2>
+          999 лайков
+        </h2>
+        <div
+          className="Comments"
+          style={
+            Object {
+              "maxHeight": "150px",
+              "overflowY": "auto",
+            }
+          }
+        >
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             1231
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             1231
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             y
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             y
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             y
+          </div>
+        </div>
+      </div>
+      <div
+        className="Comment"
+      >
+        <input
+          placeholder="Добавить комментарий...."
+          required={true}
+        />
+        <button>
+          Опубликовать
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="Post"
+  >
+    <header>
+      <a
+        href="/test"
+        onClick={[Function]}
+      >
+        <img
+          alt="Photo"
+          src="/dist/build/images/avatar.jpg"
+        />
+      </a>
+      <h2>
+        <a
+          href="/test"
+          onClick={[Function]}
+        >
+          test
+        </a>
+      </h2>
+      <img
+        className="dots"
+        src="/dist/build/images/dots.png"
+      />
+    </header>
+    <div
+      className="postphoto"
+    >
+      <img
+        src="https://cdn.pixabay.com/photo/2020/04/23/03/35/the-leaves-5080909_960_720.jpg"
+      />
+    </div>
+    <div
+      className="FootBlock"
+      style={
+        Object {
+          "maxHeight": "300px",
+        }
+      }
+    >
+      <div
+        className="LikeComments"
+      >
+        <div
+          className="PostPanel"
+        >
+          <img
+            alt="Photo"
+            className="Icon"
+            src="/dist/build/images/like.png"
+          />
+          <img
+            alt="Photo"
+            className="Icon"
+            src="/dist/build/images/comment.png"
+          />
+        </div>
+        <h2>
+          999 лайков
+        </h2>
+        <div
+          className="Comments"
+          style={
+            Object {
+              "maxHeight": "150px",
+              "overflowY": "auto",
+            }
+          }
+        >
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             1231
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             1231
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             y
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             y
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             y
+          </div>
+        </div>
+      </div>
+      <div
+        className="Comment"
+      >
+        <input
+          placeholder="Добавить комментарий...."
+          required={true}
+        />
+        <button>
+          Опубликовать
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="Post"
+  >
+    <header>
+      <a
+        href="/test"
+        onClick={[Function]}
+      >
+        <img
+          alt="Photo"
+          src="/dist/build/images/avatar.jpg"
+        />
+      </a>
+      <h2>
+        <a
+          href="/test"
+          onClick={[Function]}
+        >
+          test
+        </a>
+      </h2>
+      <img
+        className="dots"
+        src="/dist/build/images/dots.png"
+      />
+    </header>
+    <div
+      className="postphoto"
+    >
+      <img
+        src="https://cdn.pixabay.com/photo/2020/04/23/03/35/the-leaves-5080909_960_720.jpg"
+      />
+    </div>
+    <div
+      className="FootBlock"
+      style={
+        Object {
+          "maxHeight": "300px",
+        }
+      }
+    >
+      <div
+        className="LikeComments"
+      >
+        <div
+          className="PostPanel"
+        >
+          <img
+            alt="Photo"
+            className="Icon"
+            src="/dist/build/images/like.png"
+          />
+          <img
+            alt="Photo"
+            className="Icon"
+            src="/dist/build/images/comment.png"
+          />
+        </div>
+        <h2>
+          999 лайков
+        </h2>
+        <div
+          className="Comments"
+          style={
+            Object {
+              "maxHeight": "150px",
+              "overflowY": "auto",
+            }
+          }
+        >
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             1231
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             1231
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             hgj
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             y
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             y
+          </div>
+          <div>
+            <h2
+              style={
+                Object {
+                  "display": "inline-block",
+                  "margin": "8px 0",
+                }
+              }
+            >
+              fake
+            </h2>
+             y
+          </div>
+        </div>
+      </div>
+      <div
+        className="Comment"
+      >
+        <input
+          placeholder="Добавить комментарий...."
+          required={true}
+        />
+        <button>
+          Опубликовать
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

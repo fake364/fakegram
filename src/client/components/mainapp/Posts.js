@@ -18,18 +18,19 @@ class Posts extends Component {
     }
 
     componentDidMount() {
-
+        this.props.getPosts(this.props.username);
     }
 
     render() {
-        if(this.props.feedStatus.isLoading){
-            return <div style={{width:"100%",display:"flex",justifyContent:"center"}} className="PostsFeed">
+        if (this.props.feedStatus.isLoading) {
+            return <div style={{width: "100%", display: "flex", justifyContent: "center"}} className="PostsFeed">
                 <CircularProgress/>
             </div>
         }
         return (
             <div className="PostsFeed">
-                {this.props.posts.map((post)=><Post post={post}/>)}
+                {this.props.posts.length === 0 ? <p>Лента постов пуста! Подпишитесь на других пользователей или создайте
+                    пост</p> : this.props.posts.map((post, index) => <Post key={index} post={post}/>)}
             </div>
 
         );
@@ -39,8 +40,8 @@ class Posts extends Component {
 export default connect(state => ({
     username: state.userReducer.username,
     user: state.profileReducer,
-    posts:state.feedReducer.posts,
-    feedStatus:state.feedReducer.feedStatus
+    posts: state.feedReducer.posts,
+    feedStatus: state.feedReducer.feedStatus
 }), dispatch => ({
     getPosts: (username) => {
         dispatch(asyncGetFeed(username));

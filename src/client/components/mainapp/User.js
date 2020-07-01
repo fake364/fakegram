@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import Ava from "../../public/img/avatar.jpg"
 import {connect} from "react-redux";
 import UserPosts from "./UserPosts";
-import axios from "axios";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Button from "@material-ui/core/Button";
 import DetailedPost from "./DetailedPost";
@@ -48,7 +46,7 @@ class User extends Component {
             return <Error/>
         }
 
-        let isSubscribed=this.props.user.subscribers.filter(x=>x.username===this.props.currentUser).length>0;
+        let isSubscribed = this.props.user.subscribers.filter(x => x.username === this.props.currentUser).length > 0;
         console.log(isSubscribed);
         return (
             <main>
@@ -57,14 +55,14 @@ class User extends Component {
                     <div className="User">
                         <div className="UserHead">
                             <div className="UserAva">
-                                <img src={Ava}/>
+                                <img src="/dist/build/images/avatar.jpg"/>
                             </div>
                             <div className="Info">
                                 <div className="UserSubscribe">
                                     <h2>{this.props.user.username}</h2>
                                     {this.props.user.username !== this.props.currentUser && this.props.isLogined ?
                                         <Button onClick={() => {
-                                            this.props.subscribeTo(this.props.currentUser, this.props.user.username,isSubscribed ? "unsubscribe" : "subscribe");
+                                            this.props.subscribeTo(this.props.currentUser, this.props.user.username, isSubscribed ? "unsubscribe" : "subscribe");
                                         }} variant={isSubscribed ? "outlined" : "contained"}
                                                 color="primary">{isSubscribed ? "Отписаться" : "Подписаться"}</Button> : null}
                                 </div>
@@ -96,13 +94,13 @@ export default connect(state => ({
     user: state.profileReducer,
     activePost: state.detailedReducer.activePost,
     currentUser: state.userReducer.username,
-    currentUserId:state.userReducer.userid,
+    currentUserId: state.userReducer.userid,
     isLogined: state.authReducer.isLogined,
 }), dispatch => ({
     getUser: (username) => {
         dispatch(asyncGetUser(username));
     },
-    subscribeTo: (from, to,type) => {
-        dispatch(asyncSubscribe(from,to,type));
+    subscribeTo: (from, to, type) => {
+        dispatch(asyncSubscribe(from, to, type));
     }
 }))(User);

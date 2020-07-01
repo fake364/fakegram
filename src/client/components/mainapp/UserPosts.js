@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import DetailedPost from "./DetailedPost"
 import {connect} from "react-redux";
 
 class UserPosts extends Component {
@@ -12,13 +11,13 @@ class UserPosts extends Component {
     }
 
 
-
     render() {
 
         return <React.Fragment>
-
             {this.props.posts.map((post, index) =>
-                <div key={index} onClick={()=>{this.props.showPost(index)}}><img src={"images/posts/" + post.image}/></div>
+                <div key={index} onClick={() => {
+                    this.props.showPost(index)
+                }}><img src={"images/posts/" + post.image}/></div>
             )}
 
         </React.Fragment>
@@ -26,9 +25,9 @@ class UserPosts extends Component {
 }
 
 export default connect(
-    state=>({}),
-    dispatch=>({
-        showPost:(index)=>{
-            dispatch({type:"DETAIL_SHOW",post:index});
+    state => ({}),
+    dispatch => ({
+        showPost: (index) => {
+            dispatch({type: "DETAIL_SHOW", post: index});
         }
     }))(UserPosts);

@@ -7,7 +7,7 @@ import feedReducer from "./feedReducer";
 import {combineReducers} from "redux";
 
 
-const reducers={
+const reducers = {
     authReducer,
     userReducer,
     profileReducer,

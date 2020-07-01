@@ -1,8 +1,9 @@
 import axios from "axios";
+import serverUrl from "../../../serverUrl";
 
 const asyncGetUser = (username) => dispatch => {
     dispatch({type: "GET_PROFILE_START"});
-    axios.get("/api/" + username).then(res => {
+    axios.get(serverUrl + "/api/" + username).then(res => {
         if (res.status === 200) {
 
             dispatch({
@@ -20,16 +21,16 @@ const asyncGetUser = (username) => dispatch => {
         dispatch({type: "GET_PROFILE_FAILED"});
     });
 };
-const asyncSubscribe = (from,to,type) => dispatch => {
-    axios.patch("/api/user/subscribe", {from, to,type}).then((res, err) => {
+const asyncSubscribe = (from, to, type) => dispatch => {
+    axios.patch(serverUrl + "/api/user/subscribe", {from, to, type}).then((res, err) => {
 
         if (res.status === 200) {
             dispatch({
                 type: "GET_PROFILE_INFO",
-                payload: {...res.data,isSubscribed:type==="subscribe"?true:false},
+                payload: {...res.data, isSubscribed: type === "subscribe" ? true : false},
 
             });
         }
     });
 }
-export {asyncGetUser,asyncSubscribe};
+export {asyncGetUser, asyncSubscribe};
