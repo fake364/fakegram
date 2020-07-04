@@ -21,7 +21,7 @@ class User extends Component {
         if (this.props.activePost || this.props.activePost === 0) {
             return <DetailedPost author={this.props.user.username} post={this.props.user.posts[this.props.activePost]}/>
         } else return null;
-    }
+    };
 
     render() {
 
@@ -32,7 +32,7 @@ class User extends Component {
                         <CircularProgress/>
                     </div>
                 </main>
-            }
+            };
             return <MyProgress/>
         }
         if (!this.props.user.profileStatus.isFound) {
@@ -42,12 +42,11 @@ class User extends Component {
                         <h1>Пользователь не найден</h1>
                     </div>
                 </main>
-            }
+            };
             return <Error/>
         }
 
         let isSubscribed = this.props.user.subscribers.filter(x => x.username === this.props.currentUser).length > 0;
-        console.log(isSubscribed);
         return (
             <main>
                 {this.showDetail()}

@@ -1,7 +1,322 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Check User component should render User component correctly 1`] = `
+exports[`Check User component should render User component correctly when component isLoading and authed 1`] = `
 <main>
+  <div
+    className="MainFlex"
+  >
+    <h1>
+      Пользователь не найден
+    </h1>
+  </div>
+</main>
+`;
+
+exports[`Check User component should render User component correctly when component isLoading and not authed 1`] = `
+<main>
+  <div
+    className="MainFlex"
+  >
+    <h1>
+      Пользователь не найден
+    </h1>
+  </div>
+</main>
+`;
+
+exports[`Check User component should render User component correctly when user is found and another user authed and post is active 1`] = `
+<main>
+  <div
+    className="DetailedPostBack"
+  >
+    <div
+      className="BlackScreen"
+      onClick={[Function]}
+    />
+    <div
+      className="DetailedPost"
+    >
+      <img
+        id="image"
+        src="images/posts/https://cdn.pixabay.com/photo/2020/04/23/03/35/the-leaves-5080909_960_720.jpg"
+        style={
+          Object {
+            "maxWidth": "710px",
+            "objectFit": "cover",
+          }
+        }
+      />
+      <div
+        className="DetailSecond"
+      >
+        <div
+          className="PostHeader"
+        >
+          <div
+            className="Ava"
+          >
+            <img
+              src="/dist/build/images/avatar.jpg"
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "flex": "1",
+                "marginLeft": "16px",
+              }
+            }
+          >
+            <h2>
+              fake
+            </h2>
+          </div>
+          <div>
+            <img
+              src="/dist/build/images/dots.png"
+              style={
+                Object {
+                  "boxSizing": "padding-box",
+                  "height": "20px",
+                  "padding": "8px",
+                  "width": "20px",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="CommentsSocial"
+        >
+          <div
+            className="Comments"
+          >
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 1231
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 1231
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 hgj
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 hgj
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 hgj
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 hgj
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 hgj
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 y
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 y
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 y
+              </div>
+            </div>
+          </div>
+          <div
+            className="Social"
+          >
+            <img
+              src="/dist/build/images/like.png"
+            />
+            <img
+              src="/dist/build/images/comment.png"
+            />
+            <h2>
+              Нравится N человек
+            </h2>
+          </div>
+          <div
+            className="SendComment"
+          >
+            <form
+              onSubmit={[Function]}
+            >
+              <input
+                onChange={[Function]}
+                placeholder="Добавьте комментарий..."
+                required={true}
+                type="text"
+                value=""
+              />
+              <button
+                className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+                disabled={false}
+                onBlur={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={0}
+                type="submit"
+              >
+                <span
+                  className="MuiButton-label"
+                >
+                  Опубликовать
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div
     className="MainFlex"
   >
@@ -25,45 +340,21 @@ exports[`Check User component should render User component correctly 1`] = `
             className="UserSubscribe"
           >
             <h2>
-              testing
+              fake
             </h2>
-            <button
-              className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onDragLeave={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchMove={[Function]}
-              onTouchStart={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              <span
-                className="MuiButton-label"
-              >
-                Подписаться
-              </span>
-            </button>
           </div>
           <div
             className="Counts"
           >
             <div>
               <b>
-                5
+                3
               </b>
                публикаций
             </div>
             <div>
               <b>
-                0
+                1
               </b>
                подписчиков
             </div>
@@ -76,7 +367,7 @@ exports[`Check User component should render User component correctly 1`] = `
           </div>
           <div>
             <b>
-              Testing User
+              Valentin Serebreanu
             </b>
           </div>
           <div>
@@ -108,6 +399,82 @@ exports[`Check User component should render User component correctly 1`] = `
             src="images/posts/https://cdn.pixabay.com/photo/2020/04/23/03/35/the-leaves-5080909_960_720.jpg"
           />
         </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;
+
+exports[`Check User component should render User component correctly when user is found and none post is active and user authed 1`] = `
+<main>
+  <div
+    className="MainFlex"
+  >
+    <div
+      className="User"
+    >
+      <div
+        className="UserHead"
+      >
+        <div
+          className="UserAva"
+        >
+          <img
+            src="/dist/build/images/avatar.jpg"
+          />
+        </div>
+        <div
+          className="Info"
+        >
+          <div
+            className="UserSubscribe"
+          >
+            <h2>
+              fake
+            </h2>
+          </div>
+          <div
+            className="Counts"
+          >
+            <div>
+              <b>
+                3
+              </b>
+               публикаций
+            </div>
+            <div>
+              <b>
+                1
+              </b>
+               подписчиков
+            </div>
+            <div>
+              <b>
+                0
+              </b>
+               подписок
+            </div>
+          </div>
+          <div>
+            <b>
+              Valentin Serebreanu
+            </b>
+          </div>
+          <div>
+            Description
+          </div>
+        </div>
+      </div>
+      <div
+        className="PostContainer"
+      >
+        <div
+          onClick={[Function]}
+        >
+          <img
+            src="images/posts/https://cdn.pixabay.com/photo/2020/04/23/03/35/the-leaves-5080909_960_720.jpg"
+          />
+        </div>
         <div
           onClick={[Function]}
         >
@@ -124,6 +491,501 @@ exports[`Check User component should render User component correctly 1`] = `
         </div>
       </div>
     </div>
+  </div>
+</main>
+`;
+
+exports[`Check User component should render User component correctly when user is not found and another user authed 1`] = `
+<main>
+  <div
+    className="MainFlex"
+  >
+    <h1>
+      Пользователь не найден
+    </h1>
+  </div>
+</main>
+`;
+
+exports[`Check User component should return not null details,means that some post is active and user is not authed 1`] = `
+<main>
+  <div
+    className="DetailedPostBack"
+  >
+    <div
+      className="BlackScreen"
+      onClick={[Function]}
+    />
+    <div
+      className="DetailedPost"
+    >
+      <img
+        id="image"
+        src="images/posts/https://cdn.pixabay.com/photo/2020/04/23/03/35/the-leaves-5080909_960_720.jpg"
+        style={
+          Object {
+            "maxWidth": "710px",
+            "objectFit": "cover",
+          }
+        }
+      />
+      <div
+        className="DetailSecond"
+      >
+        <div
+          className="PostHeader"
+        >
+          <div
+            className="Ava"
+          >
+            <img
+              src="/dist/build/images/avatar.jpg"
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "flex": "1",
+                "marginLeft": "16px",
+              }
+            }
+          >
+            <h2>
+              fake
+            </h2>
+          </div>
+          <div>
+            <img
+              src="/dist/build/images/dots.png"
+              style={
+                Object {
+                  "boxSizing": "padding-box",
+                  "height": "20px",
+                  "padding": "8px",
+                  "width": "20px",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="CommentsSocial"
+        >
+          <div
+            className="Comments"
+          >
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 1231
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 1231
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 hgj
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 hgj
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 hgj
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 hgj
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 hgj
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 y
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 y
+              </div>
+            </div>
+            <div
+              className="Comment"
+            >
+              <div>
+                <img
+                  src="/dist/build/images/avatar.jpg"
+                />
+              </div>
+              <div
+                className="CommentText"
+              >
+                <h2>
+                  fake
+                </h2>
+                 y
+              </div>
+            </div>
+          </div>
+          <div
+            className="Social"
+          >
+            <img
+              src="/dist/build/images/like.png"
+            />
+            <img
+              src="/dist/build/images/comment.png"
+            />
+            <h2>
+              Нравится N человек
+            </h2>
+          </div>
+          <div
+            className="SendComment"
+          >
+            <form
+              onSubmit={[Function]}
+            >
+              <input
+                onChange={[Function]}
+                placeholder="Добавьте комментарий..."
+                required={true}
+                type="text"
+                value=""
+              />
+              <button
+                className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+                disabled={false}
+                onBlur={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={0}
+                type="submit"
+              >
+                <span
+                  className="MuiButton-label"
+                >
+                  Опубликовать
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MainFlex"
+  >
+    <div
+      className="User"
+    >
+      <div
+        className="UserHead"
+      >
+        <div
+          className="UserAva"
+        >
+          <img
+            src="/dist/build/images/avatar.jpg"
+          />
+        </div>
+        <div
+          className="Info"
+        >
+          <div
+            className="UserSubscribe"
+          >
+            <h2>
+              fake
+            </h2>
+          </div>
+          <div
+            className="Counts"
+          >
+            <div>
+              <b>
+                3
+              </b>
+               публикаций
+            </div>
+            <div>
+              <b>
+                1
+              </b>
+               подписчиков
+            </div>
+            <div>
+              <b>
+                0
+              </b>
+               подписок
+            </div>
+          </div>
+          <div>
+            <b>
+              Valentin Serebreanu
+            </b>
+          </div>
+          <div>
+            Description
+          </div>
+        </div>
+      </div>
+      <div
+        className="PostContainer"
+      >
+        <div
+          onClick={[Function]}
+        >
+          <img
+            src="images/posts/https://cdn.pixabay.com/photo/2020/04/23/03/35/the-leaves-5080909_960_720.jpg"
+          />
+        </div>
+        <div
+          onClick={[Function]}
+        >
+          <img
+            src="images/posts/https://cdn.pixabay.com/photo/2020/04/23/03/35/the-leaves-5080909_960_720.jpg"
+          />
+        </div>
+        <div
+          onClick={[Function]}
+        >
+          <img
+            src="images/posts/https://cdn.pixabay.com/photo/2020/04/23/03/35/the-leaves-5080909_960_720.jpg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;
+
+exports[`Check User component should return null details when post not active and user is not authed 1`] = `
+<main>
+  <div
+    className="MainFlex"
+  >
+    <div
+      className="User"
+    >
+      <div
+        className="UserHead"
+      >
+        <div
+          className="UserAva"
+        >
+          <img
+            src="/dist/build/images/avatar.jpg"
+          />
+        </div>
+        <div
+          className="Info"
+        >
+          <div
+            className="UserSubscribe"
+          >
+            <h2>
+              fake
+            </h2>
+          </div>
+          <div
+            className="Counts"
+          >
+            <div>
+              <b>
+                3
+              </b>
+               публикаций
+            </div>
+            <div>
+              <b>
+                1
+              </b>
+               подписчиков
+            </div>
+            <div>
+              <b>
+                0
+              </b>
+               подписок
+            </div>
+          </div>
+          <div>
+            <b>
+              Valentin Serebreanu
+            </b>
+          </div>
+          <div>
+            Description
+          </div>
+        </div>
+      </div>
+      <div
+        className="PostContainer"
+      >
+        <div
+          onClick={[Function]}
+        >
+          <img
+            src="images/posts/https://cdn.pixabay.com/photo/2020/04/23/03/35/the-leaves-5080909_960_720.jpg"
+          />
+        </div>
+        <div
+          onClick={[Function]}
+        >
+          <img
+            src="images/posts/https://cdn.pixabay.com/photo/2020/04/23/03/35/the-leaves-5080909_960_720.jpg"
+          />
+        </div>
+        <div
+          onClick={[Function]}
+        >
+          <img
+            src="images/posts/https://cdn.pixabay.com/photo/2020/04/23/03/35/the-leaves-5080909_960_720.jpg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+`;
+
+exports[`Check User component should return text that user is not found 1`] = `
+<main>
+  <div
+    className="MainFlex"
+  >
+    <h1>
+      Пользователь не найден
+    </h1>
   </div>
 </main>
 `;

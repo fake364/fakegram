@@ -27,7 +27,7 @@ const asyncSubscribe = (from, to, type) => dispatch => {
         if (res.status === 200) {
             dispatch({
                 type: "GET_PROFILE_INFO",
-                payload: {...res.data, isSubscribed: type === "subscribe" ? true : false},
+                payload: {...res.data, isSubscribed: type === "subscribe"},
 
             });
         }
