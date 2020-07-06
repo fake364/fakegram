@@ -1,6 +1,244 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Check successfull attempt of register i'm on the main page 1`] = `
+exports[`Main page should render correctly if im authed 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="Header"
+  >
+    <nav>
+      <div
+        className="SubHead"
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          <div
+            className="logotitle"
+          >
+            <div>
+              <img
+                alt="text"
+                src="/dist/build/images/logo192.png"
+              />
+            </div>
+            <div
+              className="leftborder"
+            >
+              Fakegram
+            </div>
+          </div>
+        </a>
+        <div>
+          <input
+            placeholder="Поиск"
+            type="text"
+          />
+        </div>
+        <div
+          className="Panel"
+        >
+          <img
+            alt="Photo2"
+            className="Icon"
+            src="/dist/build/images/heart.png"
+          />
+          <a
+            href="/fake"
+            onClick={[Function]}
+          >
+            <img
+              alt="Photo3"
+              className="Icon"
+              src="/dist/build/images/user.png"
+            />
+          </a>
+          <a
+            href="/post"
+            onClick={[Function]}
+          >
+            <img
+              alt="Photo3"
+              className="Icon"
+              src="/dist/build/images/upload.png"
+            />
+          </a>
+          <button
+            className="MuiButtonBase-root MuiIconButton-root makeStyles-root-1"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <span
+              className="MuiIconButton-label"
+            >
+              <img
+                src="/dist/build/images/logout.png"
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              />
+            </span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <main>
+    <div
+      className="MainFlex"
+    >
+      <div
+        className="PostsFeed"
+      >
+        <p>
+          Лента постов пуста! Подпишитесь на других пользователей или создайте пост
+        </p>
+      </div>
+      <div
+        className="Stories"
+      >
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+            }
+          }
+        >
+          <img
+            alt="Photo"
+            className="Avatar"
+            src="/dist/build/images/avatar.jpg"
+          />
+          <div
+            style={
+              Object {
+                "marginLeft": "14px",
+              }
+            }
+          >
+            <h2>
+              fake
+            </h2>
+            <p>
+              Valentin Serebreanu
+            </p>
+          </div>
+        </div>
+        <div
+          className="StoriesList"
+        >
+          <div
+            className="StoriesHeader"
+          >
+            <p>
+              Истории
+            </p>
+            <h3>
+              Смотреть все
+            </h3>
+          </div>
+          <div
+            className="ScrollList"
+          >
+            <div
+              className="Story"
+            >
+              <img
+                alt="Photo"
+                src="/dist/build/images/avatar.jpg"
+              />
+              <div
+                className="nickmar"
+              >
+                <h2>
+                  bolkonski_v
+                </h2>
+                <p>
+                  1 ЧАС НАЗАД
+                </p>
+              </div>
+            </div>
+            <div
+              className="Story"
+            >
+              <img
+                alt="Photo"
+                src="/dist/build/images/avatar.jpg"
+              />
+              <div
+                className="nickmar"
+              >
+                <h2>
+                  bolkonski_v
+                </h2>
+                <p>
+                  1 ЧАС НАЗАД
+                </p>
+              </div>
+            </div>
+            <div
+              className="Story"
+            >
+              <img
+                alt="Photo"
+                src="/dist/build/images/avatar.jpg"
+              />
+              <div
+                className="nickmar"
+              >
+                <h2>
+                  bolkonski_v
+                </h2>
+                <p>
+                  1 ЧАС НАЗАД
+                </p>
+              </div>
+            </div>
+            <div
+              className="Story"
+            >
+              <img
+                alt="Photo"
+                src="/dist/build/images/avatar.jpg"
+              />
+              <div
+                className="nickmar"
+              >
+                <h2>
+                  bolkonski_v
+                </h2>
+                <p>
+                  1 ЧАС НАЗАД
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`Main page should render correctly if im not authed 1`] = `
 <div
   className="App"
 >

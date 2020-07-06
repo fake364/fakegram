@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should Posts render correctly 1`] = `
+exports[`Posts component should render correctly when there are no posts 1`] = `
+<div
+  className="PostsFeed"
+>
+  <p>
+    Лента постов пуста! Подпишитесь на других пользователей или создайте пост
+  </p>
+</div>
+`;
+
+exports[`Posts component should render correctly when there are posts 1`] = `
 <div
   className="PostsFeed"
 >
