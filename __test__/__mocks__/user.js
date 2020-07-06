@@ -1,12 +1,4 @@
-import {createMemoryHistory} from "history";
-import renderer from "react-test-renderer";
-import {Provider} from "react-redux";
-import {Route, Router} from "react-router";
-import User from "../../src/client/components/mainapp/User";
-import {expect} from "@jest/globals";
 import React from "react";
-import configureStore from "redux-mock-store";
-import thunk from "redux-thunk";
 
 const baseStateAllFalse = {
     authReducer: {
@@ -185,16 +177,5 @@ export default {
     userNotFoundAndAuthed: constructState(true, false, false, false),
     userAuthedAndPostIsActive: constructState(true, true, true, false),
     userIsFoundAndInfoIsLoadingNotAuthed: constructState(false, false, false, true),
-    userIsFoundAndInfoIsLoadingAuthed: constructState(true, false, false, true),
-    checkOrCreateTheSnapshotOfState: (state, path) => {
-        let store;
-        const mockStore = configureStore([thunk]);
-        store = mockStore(state);
-        const history = createMemoryHistory();
-        history.push('/' + path);
-        const element = renderer.create(<Provider store={store}><Router history={history}><Route exact
-                                                                                                 path="/:user"
-                                                                                                 component={User}/></Router></Provider>).toJSON();
-        expect(element).toMatchSnapshot();
-    }
+    userIsFoundAndInfoIsLoadingAuthed: constructState(true, false, false, true)
 };
