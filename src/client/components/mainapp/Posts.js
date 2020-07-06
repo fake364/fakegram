@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import Post from "./Post";
 import {connect} from "react-redux";
 import asyncGetFeed from "../../actions/feedActions";
 import {CircularProgress} from "@material-ui/core";
+
+const Post = React.lazy(() => import("./Post"));
 
 class Posts extends Component {
 

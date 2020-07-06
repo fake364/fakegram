@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
+import Ava from "../../public/img/avatar.jpg"
 import {connect} from "react-redux";
-import UserPosts from "./UserPosts";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Button from "@material-ui/core/Button";
-import DetailedPost from "./DetailedPost";
 import {asyncGetUser, asyncSubscribe} from "../../actions/profileActions";
+
+const UserPosts = React.lazy(() => import("./UserPosts"));
+const DetailedPost = React.lazy(() => import("./DetailedPost"));
 
 
 class User extends Component {
@@ -54,7 +56,7 @@ class User extends Component {
                     <div className="User">
                         <div className="UserHead">
                             <div className="UserAva">
-                                <img src="/dist/build/images/avatar.jpg"/>
+                                <img src={Ava}/>
                             </div>
                             <div className="Info">
                                 <div className="UserSubscribe">

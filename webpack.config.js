@@ -56,18 +56,12 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif|woff|woff2|eot|ttf|otf)$/,
-
-                use: [{
-                    loader: "file-loader",
-                    options: {
-                        name: '[name].[ext]',
-                        publicPath: "images",
-                        outputPath: "images",
-                        limit: "100000"
-                    }
-                },],
-
-
+                loader: "file-loader?name=/src/client/public/[name].[ext]",
+                options: {
+                    publicPath: "images",
+                    outputPath: "images",
+                    limit: "100000"
+                },
             },
             {
                 test: /\.js|.jsx?$/,
@@ -76,4 +70,4 @@ module.exports = {
 
             }]
     }
-}
+};
