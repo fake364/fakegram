@@ -4,7 +4,7 @@ import {Provider} from "react-redux";
 import React from "react";
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
-import initState from "./utils/initstateforlogin"
+import initState from "./__mocks__/initstateforlogin.state"
 import {Router} from "react-router-dom";
 import App from "../src/client/components/App";
 import {createMemoryHistory} from "history";

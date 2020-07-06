@@ -1,7 +1,7 @@
 import {expect, it} from "@jest/globals";
 import renderer from 'react-test-renderer';
 import React from "react";
-import mockpostdata from "./utils/mockpostdata";
+import mockpostdata from "./__mocks__/mockpostdata.state.js";
 import {BrowserRouter} from "react-router-dom";
 import configureStore from 'redux-mock-store'
 import {Provider} from "react-redux";
@@ -15,8 +15,9 @@ const mockStore = configureStore([thunk]);
 it("should Posts render correctly", () => {
     store = mockStore({
         userReducer: {username: "test"},
-        feedReducer: {feedStatus: {isLoading: false}, posts: Array(5).fill(mockpostdata[0])}
+        feedReducer: {feedStatus: {isLoading: false}, posts: mockpostdata.posts[0]}
     });
+    console.log(store);
     const elements = renderer.create(<Provider
         store={store}><BrowserRouter><Posts/></BrowserRouter></Provider>).toJSON();
     expect(elements).toMatchSnapshot();
