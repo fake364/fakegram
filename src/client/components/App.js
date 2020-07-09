@@ -65,7 +65,6 @@ export default connect(state => ({
                             type: "USER_INFO_GOTTEN",
                             payload: {username: res.data.username, userid: res.data.userid, name: res.data.name}
                         });
-                        console.log(res.data);
                     } else {
                         throw new Error(res.error);
                     }
