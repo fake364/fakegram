@@ -1,14 +1,15 @@
-import React, {Component} from 'react';
-import Header from "./mainapp/Header";
+import React, {Component, Suspense} from 'react';
 import {Redirect, Route, Switch} from "react-router-dom";
-import User from "./mainapp/User";
-import Auth from "./auth/Auth";
-import Main from "./mainapp/Main";
-import LoginComponent from "./auth/Login";
 import {connect} from "react-redux";
 import axios from "axios";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import PostCreator from "./mainapp/PostCreator";
+import {CircularProgress} from "@material-ui/core";
+
+const Header = React.lazy(() => import("./mainapp/Header"));
+const LoginComponent = React.lazy(() => import("./auth/Login"));
+const Main = React.lazy(() => import("./mainapp/Main"));
+const Auth = React.lazy(() => import("./auth/Auth"));
+const User = React.lazy(() => import("./mainapp/User"));
+const PostCreator = React.lazy(() => import("./mainapp/PostCreator"));
 
 class App extends Component {
 
@@ -23,25 +24,26 @@ class App extends Component {
                     <CircularProgress/>
                 </div>
             </main>
-        }
+        };
         return (
             <div className="App">
-                {this.props.isLogined ? <Header/> : null}
-                <Switch>
-                    <Route exact path="/">
-                        {this.props.isLogined ? <Main/> : this.props.isLoading ? <MyProgress/> : <Auth/>}
-                    </Route>
-                    <Route exact path="/login">
-                        {this.props.isLogined ? <Redirect to="/"/> : null}
-                        {this.props.isLogined ? <Main/> : this.props.isLoading ? <MyProgress/> : <LoginComponent/>}
-                    </Route>
-                    <Route exact path="/post">
-                        {this.props.isLogined ? <PostCreator/> : this.props.isLoading ? <MyProgress/> :
-                            <LoginComponent/>}
-                    </Route>
-                    <Route exact path="/:user" component={User}/>
-
-                </Switch>
+                <Suspense fallback={MyProgress}>
+                    {this.props.isLogined ? <Header/> : null}
+                    <Switch>
+                        <Route exact path="/">
+                            {this.props.isLogined ? <Main/> : this.props.isLoading ? <MyProgress/> : <Auth/>}
+                        </Route>
+                        <Route exact path="/login">
+                            {this.props.isLogined ? <Redirect to="/"/> : null}
+                            {this.props.isLogined ? <Main/> : this.props.isLoading ? <MyProgress/> : <LoginComponent/>}
+                        </Route>
+                        <Route exact path="/post">
+                            {this.props.isLogined ? <PostCreator/> : this.props.isLoading ? <MyProgress/> :
+                                <LoginComponent/>}
+                        </Route>
+                        <Route exact path="/:user" component={User}/>
+                    </Switch>
+                </Suspense>
             </div>
 
         );
@@ -54,7 +56,7 @@ export default connect(state => ({
 }), dispatch => ({
     checkToken: () => {
         const asyncCheck = () => dispatch => {
-            dispatch({type: "LOGIN_INIT"})
+            dispatch({type: "LOGIN_INIT"});
             axios.get('api/checkToken')
                 .then(res => {
                     if (res.status === 200) {
@@ -65,15 +67,14 @@ export default connect(state => ({
                         });
                         console.log(res.data);
                     } else {
-                        const error = new Error(res.error);
-                        throw error;
+                        throw new Error(res.error);
                     }
                 })
                 .catch(err => {
                     dispatch({type: "LOGIN_FAILED"});
                 });
 
-        }
+        };
         dispatch(asyncCheck());
     },
 

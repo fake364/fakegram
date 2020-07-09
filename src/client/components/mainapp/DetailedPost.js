@@ -1,5 +1,9 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
+import Avatar from "../../public/img/avatar.jpg";
+import Dots from "../../public/icons/dots.png";
+import Like from "../../public/icons/like.png";
+import Comment from "../../public/icons/comment.png";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 
@@ -35,23 +39,22 @@ class DetailedPost extends Component {
                      src={"images/posts/" + this.props.post.image}/>
                 <div className="DetailSecond">
                     <div className="PostHeader">
-                        <div className="Ava"><img src="/dist/build/images/avatar.jpg"/></div>
+                        <div className="Ava"><img src={Avatar}/></div>
                         <div style={{marginLeft: "16px", flex: "1"}}><h2>{this.props.author}</h2></div>
                         <div><img style={{width: "20px", height: "20px", padding: "8px", boxSizing: "padding-box"}}
-                                  src="/dist/build/images/dots.png"/></div>
+                                  src={Dots}/></div>
                     </div>
                     <div className="CommentsSocial">
                         <div className="Comments">
-                            {this.props.post.description !== "" ?
-                                <div className="Comment">
-                                    <div><img src="/dist/build/images/avatar.jpg"/></div>
-                                    <div className="CommentText">
-                                        <h2>{this.props.author}</h2>{" " + this.props.post.description}
-                                    </div>
-                                </div> : null}
+                            <div className="Comment">
+                                <div><img src={Avatar}/></div>
+                                <div className="CommentText">
+                                    <h2>{this.props.author}</h2>{" " + this.props.post.description}
+                                </div>
+                            </div>
                             {this.state.comments.map(comment =>
                                 <div className="Comment">
-                                    <div><img src="/dist/build/images/avatar.jpg"/></div>
+                                    <div><img src={Avatar}/></div>
                                     <div className="CommentText">
                                         <h2>{comment.author}</h2>{" " + comment.comment}
                                     </div>
@@ -59,8 +62,8 @@ class DetailedPost extends Component {
                             )}
                         </div>
                         <div className="Social">
-                            <img src="/dist/build/images/like.png"/>
-                            <img src="/dist/build/images/comment.png"/>
+                            <img src={Like}/>
+                            <img src={Comment}/>
                             <h2>Нравится N человек</h2>
                         </div>
                         <div className="SendComment">

@@ -1,6 +1,9 @@
 import React from 'react';
-import RegForm from "./RegForm";
 import {Link} from "react-router-dom";
+
+import TitleImage from "../../public/img/first.jpg";
+
+const RegForm = React.lazy(() => import("./RegForm"));
 
 function MainScreen() {
     return (
@@ -8,7 +11,7 @@ function MainScreen() {
 
             <div className="Phones">
                 <div className="Slides">
-                    <img src="/dist/build/images/first.jpg"/>
+                    <img src={TitleImage}/>
                 </div>
             </div>
             <div className="SecondSlide">

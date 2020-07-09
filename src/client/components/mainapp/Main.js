@@ -1,6 +1,7 @@
 import React from 'react';
-import Posts from "./Posts";
-import Stories from "./Stories";
+
+const Posts = React.lazy(() => import("./Posts"));
+const Stories = React.lazy(() => import("./Stories"));
 
 function Main() {
     return (
