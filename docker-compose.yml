@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  mydb:
+    image: mongo
+    restart: always
+    environment:
+      - MONGO_INITDB_DATABASE=fakegram
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    links:
+      - mydb
+    depends_on:
+      - "mydb"
