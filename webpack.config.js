@@ -7,7 +7,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
-    entry: ["babel-polyfill", "./index.js"],
+    entry: ["babel-polyfill", "./index.js", "./src/client/style/index.scss"],
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/client/index.html'
@@ -30,8 +30,18 @@ module.exports = {
         minimizer: [new UglifyJsPlugin({
             include: /\.js$/
         })],
+        splitChunks: {
+            cacheGroups: {
+                styles: {
+                    name: 'styles',
+                    test: /\.(sa|sc|c)ss$/,
+                    chunks: 'all',
+                    enforce: true,
+                },
+            },
+        }
     },
-    watch: true,
+    watch: false,
     devtool: "source-map",
     mode: "production",
     devServer: {
