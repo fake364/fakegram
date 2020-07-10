@@ -1,5 +1,10 @@
 # Fakegram app
 Still develop, but you can watch screens or inspect the code 
+
+### Run
+You can run this app in container via Docker, so be sure that you have Docker already installed.
+
+    docker-compose up
 ## Used technologies
  
 
