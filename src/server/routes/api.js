@@ -44,7 +44,7 @@ router.patch("/post/:postid", withAuth, function (req, res, next) {
 
 router.patch("/user/subscribe", withAuth, function (req, res, next) {
     const {from, to, type} = req.body;
-    User.find({$or: [{username: from}, {username: to}]}).populate("subscribers").then((docs, err) => {
+    User.find({$or: [{username: from}, {username: to}]}).select("-password").populate("subscribers","-password").then((docs, err) => {
         if (err) {
             res.sendStatus(500);
         }
